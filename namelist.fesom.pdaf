@@ -91,12 +91,12 @@ dim_ens=20
 ! Namelist for atmosphere stochasticity:
 &atmos_stoch
 
-disturb_xwind=.false.
-disturb_ywind=.false.
+disturb_xwind=.true.
+disturb_ywind=.true.
 disturb_humi=.false.
 disturb_qlw=.false.
 disturb_qsr=.false.
-disturb_tair=.true.
+disturb_tair=.false.
 disturb_prec=.false.
 disturb_snow=.false.
 disturb_mslp=.false.

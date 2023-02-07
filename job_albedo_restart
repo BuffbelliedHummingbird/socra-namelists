@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=biogeo.p_recompdaf
 #SBATCH --partition=mpp
-#SBATCH --ntasks=720 #720 #288 #1440
+#SBATCH --ntasks=1440 #720 #720 #288 #1440
 #SBATCH --cpus-per-task=1
 #SBATCH --time=07:00:00 # 7 hours
 #SBATCH --hint=nomultithread
@@ -29,12 +29,12 @@ info "Let's get started."
 JOBID=`echo $SLURM_JOB_ID |cut -d"." -f1`
 
 # Directories:
-exp_name='FESOM_PDAF_varatm_control_winds_only'
+exp_name='FESOM_PDAF_assim_atmtempwinds'
 start_dir=${PWD}
 run_dir=/albedo/work/projects/p_recompdaf/frbunsen/modelruns/fesom2/${exp_name}/work
 
 # Settings:
-NENS=10           # number of ensembles --> namelist.fesom.pdaf
+NENS=20           # number of ensembles --> namelist.fesom.pdaf
 fes_numproc=72    # ntasks divided by NENS
 
 # Simulation start and end date. Use any (reasonable) syntax you want.

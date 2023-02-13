@@ -7,7 +7,7 @@
 #SBATCH --hint=nomultithread
 #SBATCH --qos=12h #30min
 
-#SBATCH --job-name=tair150
+#SBATCH --job-name=winds010
 #SBATCH -o slurm-out.out
 #SBATCH -e slurm-err.out
 
@@ -29,7 +29,7 @@ info "Let's get started."
 JOBID=`echo $SLURM_JOB_ID |cut -d"." -f1`
 
 # Directories:
-exp_name='FESOM_PDAF_varatm_control_temp_only_varsc150'
+exp_name='FESOM_PDAF_varatm_control_winds_only_varsc010'
 start_dir=${PWD}
 run_dir=/albedo/work/projects/p_recompdaf/frbunsen/modelruns/fesom2/${exp_name}/work
 
@@ -53,7 +53,7 @@ run_num_legs=1
 # Set $force_run_from_scratch to 'true' if you want to remove files
 # from previous test runs from $run_dir.
 # NOTE: If set to 'true', the run directory $run_dir is cleaned!
-force_run_from_scratch=true
+force_run_from_scratch=false
 
 # This file is used to store information about restarts
 ece_info_file="ece.info"

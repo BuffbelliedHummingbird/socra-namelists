@@ -2,3 +2,5 @@ slurm-err.out
 slurm-out.out
 librunscript.sh
 fesom.x
+namelist.forcing.climatological
+namelist.io.recom.no_output

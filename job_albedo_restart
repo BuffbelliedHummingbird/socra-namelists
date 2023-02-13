@@ -1,13 +1,13 @@
 #!/bin/bash
 #SBATCH --account=biogeo.p_recompdaf
 #SBATCH --partition=mpp
-#SBATCH --ntasks=1440 #720 #720 #288 #1440
+#SBATCH --ntasks=720 #720 #288 #1440
 #SBATCH --cpus-per-task=1
 #SBATCH --time=07:00:00 # 7 hours
 #SBATCH --hint=nomultithread
 #SBATCH --qos=12h #30min
 
-#SBATCH --job-name=FeRePDAF
+#SBATCH --job-name=tair150
 #SBATCH -o slurm-out.out
 #SBATCH -e slurm-err.out
 
@@ -29,12 +29,12 @@ info "Let's get started."
 JOBID=`echo $SLURM_JOB_ID |cut -d"." -f1`
 
 # Directories:
-exp_name='FESOM_PDAF_assim_atmtempwinds'
+exp_name='FESOM_PDAF_varatm_control_temp_only_varsc150'
 start_dir=${PWD}
 run_dir=/albedo/work/projects/p_recompdaf/frbunsen/modelruns/fesom2/${exp_name}/work
 
 # Settings:
-NENS=20           # number of ensembles --> namelist.fesom.pdaf
+NENS=10           # number of ensembles --> namelist.fesom.pdaf
 fes_numproc=72    # ntasks divided by NENS
 
 # Simulation start and end date. Use any (reasonable) syntax you want.
@@ -361,7 +361,7 @@ done # loop over legs
     echo "Time: $duration"
     
     # Delete output of individual ensembles:
-    # rm ??/*.fesom.2016.nc
+    rm ??/*.fesom.2016.nc
 
     # Copy the protocol of this leg:
     cp ../start/fesom2.0.out ensemble_means/${leg_number}/

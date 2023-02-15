@@ -7,7 +7,7 @@
 #SBATCH --hint=nomultithread
 #SBATCH --qos=12h #30min
 
-#SBATCH --job-name=ctrltawi
+#SBATCH --job-name=asimtawi
 #SBATCH -o slurm-out.out
 #SBATCH -e slurm-err.out
 
@@ -29,7 +29,7 @@ info "Let's get started."
 JOBID=`echo $SLURM_JOB_ID |cut -d"." -f1`
 
 # Directories:
-exp_name='FESOM_PDAF_varatm_control_tair100_wind010'
+exp_name='FESOM_PDAF_varatm_assim_tair100_wind010'
 start_dir=${PWD}
 run_dir=/albedo/work/projects/p_recompdaf/frbunsen/modelruns/fesom2/${exp_name}/work
 

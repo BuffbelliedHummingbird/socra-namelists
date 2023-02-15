@@ -80,7 +80,7 @@ path_atm_cov = '/albedo/work/projects/p_recompdaf/frbunsen/data/jra_core2/dist72
 &pdaf_parallel
 
 ! General:
-dim_ens=20
+dim_ens=10
 
 ! ! Coupled to AWI-CM only:
 ! cpus_atm=0
@@ -93,13 +93,14 @@ dim_ens=20
 
 disturb_xwind=.true.
 disturb_ywind=.true.
-disturb_humi =.false.
-disturb_qlw  =.false.
-disturb_qsr  =.false.
-disturb_tair =.false.
-disturb_prec =.false.
-disturb_snow =.false.
-disturb_mslp =.false.
+disturb_humi=.false.
+disturb_qlw=.false.
+disturb_qsr=.false.
+disturb_tair=.true.
+disturb_prec=.false.
+disturb_snow=.false.
+disturb_mslp=.false.
 
 varscale_wind = 0.1
+varscale_tair = 1.0
 /
